@@ -17,7 +17,7 @@ void main(){
     scanf("%d",&A);
     
     
-     e[i]=(EMP*)malloc(sizeof(EMP));
+     e=(EMP*)malloc(sizeof(EMP));
   
     for (int i = 1; i <= A; i++)
     {
