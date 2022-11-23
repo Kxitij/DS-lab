@@ -15,7 +15,7 @@ EMP* e;
 void totalSalary(){
     char dept[10];
     float tot=0;
-    printf("Enter the Dept");
+    printf("Enter the Dept to get the total salary of\t");
     scanf("%s",dept);
     for (int i = 0; i < n ; i++)
     {
