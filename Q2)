@@ -12,7 +12,7 @@ struct employee
 };
 typedef struct employee EMP;
 EMP* e;
-// this logic is copied from maam. this is giving wrong output.
+
 void totalSalary(){
     char dept[10];
     float tot=0;
@@ -20,7 +20,7 @@ void totalSalary(){
     scanf("%s",dept);
     for (int i = 0; i < n ; i++)
     {
-        if(strcmp((e+i)->Dep,dept)==0) tot+=(e+1)->Salary;
+        if(strcmp((e+i)->Dep,dept)==0) tot+=(e+i)->Salary;
     }
     printf("The total salary of %s is %f\n",dept,tot);
     
