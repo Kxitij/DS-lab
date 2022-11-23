@@ -1,0 +1,93 @@
+#include<stdio.h>
+#include<stdlib.h>
+void sum(int* arr,int n){
+	int s=0;
+	for(int i=0;i<n;i++){
+    	s+=arr[i];
+	}
+	printf("\nThe sum of the elements is %d\n",s);
+}
+void ins(int* arr, int n,int C,int m){
+	arr[n++];
+	for(int i=n-1;i>=m;i--){
+   	 arr[i]=arr[i-1];
+   	 
+	}
+	arr[m-1]=C;
+	printf("The new array is:\n");
+	for(int i=0;i<n;i++) printf("%d",arr[i]);
+   
+}
+
+
+
+void del(int* arr, int n, int m){
+	for(int i=m;i<=n; i++){
+   	 arr[i]=arr[i+1];
+	}
+    
+	printf("The new array is:\n");
+	for(int i=0;i<n;i++) printf("%d",arr[i]);
+
+}
+
+
+
+void main(){
+	int n=0,C,m, Q=1;
+	int arr[n];
+	char ch;
+    
+   	 
+read:do{
+printf("Enter the following to perform A-->CREATE A NEW ARRAY. B-->DISPLAY THE ARRAY. C--> ADD AN ELEMENT TO A POSITION. D--> DELETE AN ELEMENT. E--> SUM OF THE ELEMENTS ARRAY. F--> EXIT THE PROGRAM. ");
+	scanf("%c",&ch);
+	switch(ch){
+   	 case 'A':{
+    printf("Enter the number of items in array\n");
+    	scanf("%d",&n);
+   	 
+    	printf("Enter the numbers\n");
+    	for(int i=0;i<n;i++){
+            	scanf("%d",&arr[i]);}
+   	 break;
+
+   	  }
+    case 'B':{
+   	  printf("The array is:\n");
+            	for(int i=0;i<n;i++){
+            	printf("%d",arr[i]);}
+            	break;
+
+   	  }
+	 
+    case 'C':{
+         printf("Enter the number and the position to put it\n");
+   		 scanf("%d%d",&C,&m);
+   		 ins(arr,n,C,m);
+   	 break;
+   	  }
+    case 'D':{
+   	  printf("Enter the position of element to delete it\n");
+         	scanf("%d",&C);
+             	del(arr,n,C);
+   	  break;
+   	  }
+    case 'E':{
+   	  sum(arr,n);
+   	  break;
+   	  }
+    case 'F':{
+   	  break;
+   	  }
+    default: exit(0);
+
+	}
+    
+	printf("Do you wish to continue? 1--> yes   0--> no");
+	scanf("%d",&Q);}while(Q==1);
+    
+    
+    
+
+}
