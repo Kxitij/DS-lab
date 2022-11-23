@@ -1,0 +1,50 @@
+// This is still incomplete.
+#include<stdio.h>
+#include<stdlib.h>
+#define n 10
+struct employee
+{
+    char name[30];
+    char Dep[20];
+    int ID;
+    float Salary;
+
+};
+typedef struct employee EMP;
+void main(){
+    int A;
+    EMP* e[n];
+    printf("Welcome to employee database\nHow many employees are working for you?\n");
+    scanf("%d",&A);
+    for (int i = 0; i < A; i++)
+    {
+       e[i]=(EMP*)malloc(sizeof(EMP));
+    }
+    for (int i = 1; i <= A; i++)
+    {
+        printf("Enter the name of %d employee\n",i);
+        scanf("%s",e[i]->name);
+        printf("Enter the Department of %d employee\n",i);
+        scanf("%s",e[i]->Dep);
+        printf("Enter the ID of %d employee\n",i);
+        scanf("%d",e[i]->ID);
+        printf("Enter the Salary of %d employee\n",i);
+        scanf("%f",e[i]->Salary);
+    }
+    for (int i = 1; i <= A; i++)
+    {
+        printf("The name of %d employee\n",i);
+        printf("%s",e[i]->name);
+        printf("The Department of %d employee\n",i);
+        printf("%s",e[i]->Dep);
+        printf("The ID of %d employee\n",i);
+        printf("%d",e[i]->ID);
+        printf("The Salary of %d employee\n",i);
+        printf("%f",e[i]->Salary);
+    }
+
+    
+    
+
+
+}
