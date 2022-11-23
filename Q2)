@@ -12,6 +12,7 @@ struct employee
 };
 typedef struct employee EMP;
 EMP* e;
+// this logic is copied from maam. this is giving wrong output.
 void totalSalary(){
     char dept[10];
     float tot=0;
