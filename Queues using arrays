@@ -1,0 +1,59 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define MAX 10
+int Q[MAX];
+int front=-1,rear=-1;
+int isFull();
+int isEmpty();
+void NQ();
+void DQ();
+void disp();
+void main(){
+    int ch=0;
+    printf("Enter your choice\n");
+    do{
+        printf("1-->Queue element.\n2-->Dequeue element.\n3-->Display the queue.\n4-->EXIT.\n");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1: NQ();
+                    break;
+            case 2: DQ();
+                    break;
+            case 3: disp(); 
+                    break;
+            case 4: exit(0);
+            default : printf("Enter a valid choice\n");
+        }
+    }while(1<=ch<=4);
+}
+int isFull(){
+    if(rear==MAX-1) return 1;
+    else return 0;
+}
+int isEmpty(){
+    if(front==-1) return 1;
+    else return 0;
+}
+void NQ(){
+    int x;
+    if(isFull()){ printf("QUEUE is full\n"); return;}
+    if(front==-1){ front=0;}
+    printf("Enter the element to enqueue\n");
+    scanf("%d",&x);
+    rear++;
+    Q[rear]=x;
+}
+void DQ(){
+    int data;
+ if(!isEmpty()) {
+      data = Q[front];
+      front +=1;   
+      printf("element dequeued is %d\n",data);
+    }
+    if(front==rear) front=rear=-1;
+}
+void disp(){
+    if(isEmpty()) printf("Queue empty\n");
+    else for(int i= front; i<=rear; i++) printf("%d\t",Q[i]);
+    printf("\n");
+}
